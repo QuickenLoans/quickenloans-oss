@@ -1,0 +1,14 @@
+{
+  "name": "ql-oss-landing-page-mvp",
+  "version": "0.9.0",
+  "description": "Landing page for organizing Quicken Loans' open source projects.",
+  "scripts": {
+    "build": "npm run index && npm run css",
+    "prebuild": "npm run clean && mkdir build",
+    "clean": "rm -rf build",
+    "css": "cp ./src/style.css ./build/",
+    "index": "node bin/projects.js -card ./src/card.tmpl -template ./src/index.html ./build/index.html"
+  },
+  "author": "Joshua T Kalis <kalisjoshua@gmail.com> (http://kalisjoshua.me)",
+  "license": "MIT"
+}
