@@ -1,0 +1,9 @@
+title: Project Name
+description: Describe the project briefly.
+keywords:
+language:
+type: application, tool, library, or documentation
+url:
+  logo: http://foo.bar/logo.png
+  project: http://foo.bar
+  repository: http://foo.bar.git
