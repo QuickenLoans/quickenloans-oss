@@ -13,5 +13,8 @@
     "postpages:publish": "git reset --hard master^"
   },
   "author": "Joshua T Kalis <kalisjoshua@gmail.com> (http://kalisjoshua.me)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^3.8.4"
+  }
 }
