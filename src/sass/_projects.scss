@@ -87,3 +87,9 @@
     flex: 0 0 calc(100% / 3 - 2ex);
   }
 }
+
+@media (min-width: 1200px) {
+  .project--card {
+    flex: 0 0 calc(100% / 4 - 2ex);
+  }
+}

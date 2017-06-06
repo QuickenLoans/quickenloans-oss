@@ -27,10 +27,6 @@ h1 a {
   text-decoration: none;
 }
 
-main {
-  padding: 0 2ex;
-}
-
 p {
   margin: 4ex 0;
   text-indent: 4ex;
@@ -46,11 +42,13 @@ p {
     margin: 0 0 4ex;
   }
 
-  main {
-    padding: 0;
-  }
-
   .width-container {
     max-width: 50em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .width-container {
+    max-width: 80em;
   }
 }
