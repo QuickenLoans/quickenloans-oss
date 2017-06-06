@@ -1,0 +1,24 @@
+.hero-title {
+  text-align: center;
+}
+
+.hero-title em {
+  color: $QL_red;
+}
+
+.hero-title span {
+  color: $QL_topaz;
+  font-weight: 900;
+}
+
+@media (min-width: 550px) {
+  .hero-title {
+    margin: 4ex;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero-title {
+    font-size: 7ex;
+  }
+}

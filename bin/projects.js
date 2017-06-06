@@ -29,6 +29,7 @@ function card(project) {
     .replace(/#description/g, project.description)
     .replace(/#href/g, link)
     .replace(/#keywords/g, project.keywords || '')
+    .replace(/#language/g, project.language || '_')
     .replace(/#logo/g, project.logo || 'http://via.placeholder.com/80x80')
     .replace(/#title/g, project.title)
 }

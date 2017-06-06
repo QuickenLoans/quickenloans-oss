@@ -1,0 +1,54 @@
+[for="filter"] {
+  font-size: 100%;
+  font-weight: 100;
+}
+
+input[name="filter"] {
+  background: transparent;
+  background: rgba(255, 255, 255, 0.3);
+  border: 0;
+  border-bottom: 1px solid #444;
+  border-radius: 3px;
+  font-size: 110%;
+  padding: 3px 1ex;
+  width: 47%;
+}
+
+.filters {
+  display: none;
+}
+
+.quick-filters {
+  list-style-type: none;
+}
+
+.quick-filters > li {
+  border-top: 3px solid transparent;
+  cursor: pointer;
+  display: inline-block;
+  margin: -1ex 0;
+  padding: 1ex;
+  position: relative;
+}
+
+.quick-filters > li:hover:after {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #AAA;
+  content: '';
+  height: 0;
+  left: calc(50% - 3px);
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+
+@media (min-width: 550px) {
+  .filters {
+    display: block;
+  }
+
+  .quick-filters {
+    float: right;
+  }
+}

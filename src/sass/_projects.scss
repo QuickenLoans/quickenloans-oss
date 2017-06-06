@@ -1,0 +1,89 @@
+.project--card {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  margin: 2ex 0;
+  padding-bottom: 6ex;
+  position: relative;
+  transition: 200ms;
+}
+
+.project--card:hover {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+
+  .project--card__banner img {
+    border-width: 8px;
+    margin: 5px;
+  }
+
+  a {
+    color: #888;
+  }
+}
+
+.project--card > * {
+  flex: 0 0 0;
+}
+
+.project--card__banner {
+  img {
+    border: 3px solid #FFF;
+    border-radius: 80px;
+    float: right;
+    margin: 10px;
+    transition: all 100ms, border-color 200ms 200ms;
+  }
+
+  .project--card__title {
+    display: inline-block;
+    padding: 4ex 2ex;
+  }
+}
+
+.project--card__desc,
+.project--card__link {
+  padding: 0 2ex;
+}
+
+.project--card__keywords {
+  display: none;
+}
+
+.project--card__link {
+  align-self: flex-end;
+  bottom: 0;
+  padding: 2ex;
+  position: absolute;
+  right: 0;
+
+  a {
+    color: #ccc;
+    transition: 100ms;
+  }
+
+  a:hover {
+    color: #222;
+  }
+}
+
+.project--card__title {
+  display: none;
+}
+
+@media (min-width: 550px) {
+  .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .project--card {
+    flex: 0 0 calc(100% / 2 - 2ex);
+  }
+}
+
+@media (min-width: 900px) {
+  .project--card {
+    flex: 0 0 calc(100% / 3 - 2ex);
+  }
+}

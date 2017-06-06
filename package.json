@@ -3,18 +3,19 @@
   "version": "0.9.0",
   "description": "Landing page for organizing Quicken Loans' open source projects.",
   "scripts": {
-    "build": "npm run index && npm run css",
+    "build": "npm run index && npm run sass",
     "prebuild": "npm run clean && mkdir build",
     "clean": "rm -rf build",
-    "css": "cp ./src/style.css ./build/",
     "index": "node bin/projects.js -card ./src/card.tmpl -template ./src/index.html ./build/index.html",
     "pages:publish": "git push upstream `git subtree split --prefix build master`:gh-pages --force",
     "prepages:publish": "npm run build && git add build -f && git commit -am publishing",
-    "postpages:publish": "git reset --hard master^"
+    "postpages:publish": "git reset --hard master^",
+    "sass": "node-sass ./src/sass/styles.scss > ./build/style.css"
   },
   "author": "Joshua T Kalis <kalisjoshua@gmail.com> (http://kalisjoshua.me)",
   "license": "MIT",
   "dependencies": {
-    "js-yaml": "^3.8.4"
+    "js-yaml": "^3.8.4",
+    "node-sass": "^4.5.3"
   }
 }
