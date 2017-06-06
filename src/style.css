@@ -10,12 +10,7 @@ a {
 
 body {
   font-family: Arial, sans-serif;
-}
-
-body > header {
-  background: #444;
-  color: #FFF;
-  padding: 1ex;
+  padding: 0 1ex;
 }
 
 h1 a {
@@ -47,6 +42,20 @@ input[name="filter"] {
   font-size: 110%;
   padding: 3px 1ex;
   width: 47%;
+}
+
+.filters {
+  display: none;
+}
+
+.hero-title {
+  margin: 4ex;
+  text-align: center;
+}
+
+.hero-title span {
+  /*color: blue;*/
+  font-weight: 900;
 }
 
 .project--banner {
@@ -119,8 +128,18 @@ input[name="filter"] {
 .project--keywords { display: none; }
 .project--card > .project--title { display: none; }
 
+.ql-links {
+}
+
+.ql-links h2 a {
+  text-decoration: none;
+}
+
+.ql-links ul {
+  list-style-type: none;
+}
+
 .quick-search {
-  float: right;
   list-style-type: none;
 }
 
@@ -151,6 +170,10 @@ input[name="filter"] {
 }
 
 @media (min-width: 550px) {
+  .filters {
+    display: block;
+  }
+
   .projects-container {
     display: flex;
     flex-wrap: wrap;
@@ -160,13 +183,26 @@ input[name="filter"] {
   .project--card {
     flex: 0 0 calc(100% / 2 - 2ex);
   }
+
+  .ql-links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ql-links ul li {
+    display: inline;
+  }
+
+  .ql-links ul li:not(:first-child) {
+    padding-left: 2ex;
+  }
+
+  .quick-search {
+    float: right;
+  }
 }
 
 @media (min-width: 900px) {
-  body {
-    padding: 0;
-  }
-
   header h1 {
     margin: 0 0 4ex;
   }

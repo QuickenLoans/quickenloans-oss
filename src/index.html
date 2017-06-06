@@ -3,16 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>Quicken Loans {Open Source}</title>
+  <title>Quicken Loans - Open source landing page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <header role="banner">
-    <h1><a href="/">Quicken Loans {Open Source}</a></h1>
+    <aside class="ql-links">
+      <h2><a href="//QuickenLoans.com">Quicken Loans</a></h2>
 
-    <nav class="width-container">
+      <ul>
+        <li><a href="//github.com/QuickenLoans/">GitHub</a></li>
+        <li><a href="//quickenloanscareers.com/">Careers</a></li>
+        <li><a href="//QuickenLoans.com">QuickenLoans.com</a></li>
+      </ul>
+    </aside>
+
+    <h1 class="hero-title"><a href="/">
+      <span>{</span>
+        <strong><em title="Quicken Loans">QL</em></strong><span>:</span>
+        <code>code</code>
+      <span>}</span></a></h1>
+
+    <nav class="filters width-container">
       <h2 for="filter">Filter Projects</h2>
 
       <input id="filter" list="prefilled-search" name="filter" type="search" />
