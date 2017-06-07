@@ -1,0 +1,24 @@
+title: 'MCP Cache'
+
+description: >
+  Simple caching standard for Quicken Loans PHP projects.
+
+  We prefer a simpler cache protocol than the one provided by PSR-6 Caching
+  Interface. This package has many similarities with the draft PSR-16 Simple
+  Cache, but is not yet compatible.
+
+keywords:
+  - 'mcp'
+  - 'cache'
+
+language: php
+
+maintainers:
+  skluck: 'stevekluck@quickenloans.com'
+
+type: library
+
+url:
+  logo: ''
+  project: ''
+  repository: 'https://github.com/quickenloans-mcp/mcp-cache'
