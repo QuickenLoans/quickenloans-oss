@@ -1,0 +1,19 @@
+title: JavaScript Concord
+description: >
+  The JS Concord group is a group of developers striving for a more consistent
+  JavaScript project development experience.
+keywords:
+  - standards
+  - JavaScript
+language: JavaScript
+maintainers:
+  kalisjoshua: joshkalis@quickenloans.com
+  kherrick: karlherrick@quickenloans.com
+  scottux: scottcarroll@quickenlaons.com
+  richardmartinez: richmartinez@quickenloans.com
+  shaunwest: shaunwest@quickenloans.com
+type: documentation
+url:
+  logo:
+  project:
+  repository: https://github.com/QuickenLoans/js-concord

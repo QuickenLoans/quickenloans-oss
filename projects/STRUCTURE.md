@@ -48,9 +48,9 @@ level of formality for your project.
   1. Informal
     + Indicate that Pull Requests are welcome and appreciated. All discussion,
       *if any*, will happen in the Pull Request discussion thread.
-    + Meant for small project that are fairly focused and will likely be fairly
-      "complete" meaning that "new features" are unlikely and any changes are
-      more often going to be smaller "bug" fixes.
+    + Meant for small projects that are fairly focused and will likely be
+      fairly "complete" meaning that "new features" are unlikely and any
+      changes are more often going to be smaller "bug" fixes.
     + [GitHub templates for Pull Requests and Issues][GitHub templates] are a
       good idea but not required.
   2. Formal
