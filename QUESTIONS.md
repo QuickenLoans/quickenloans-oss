@@ -9,10 +9,10 @@ The full description in - hopefully - complete detail is documented in the
   1. Proposal
   2. Discussion
   3. Review
-    1. Subject Matter Expert
-    2. Security
-    3. Legal
-  4. Touch-ups
+    - Subject Matter Expert
+    - Security
+    - Legal
+  4. Touch-ups *(if necessary)*
   5. Acceptance
 
 
@@ -27,8 +27,8 @@ The full description in - hopefully - complete detail is documented in the
 
 **When should I open/start a proposal for a project?**
 
-If you are unsure about proposing that a project should be released as open
-source reach out:
+If you are unsure about proposing a project for release as open source reach
+out to the open source team, via:
 
   - Email - opensource@quickenloans.com
   - HipChat - [Team] Open Source
@@ -39,6 +39,8 @@ source reach out:
       * JoshKalis@quickenloans.com
     + Steve Kluck
       * SteveKluck@quickenloans.com
+    + Dave Gillhespy
+      * DaveGillhespy@quickenloans.com
 
 Generally speaking, as early as possible is a good rule of thumb for when to
 propose a new project for open source. Sharing with the greater community of

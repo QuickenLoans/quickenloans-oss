@@ -1,0 +1,16 @@
+title: XSerializer
+description: >
+  XSerializer is a library that provides advanced, high-performance XML and
+  JSON serializers.
+keywords:
+  - serialization
+  - csharp
+  - .net
+language: C#
+maintainers:
+  bfriesen: brianfriesen@quickenloans.com
+type: library
+url:
+  logo:
+  project: https://github.com/QuickenLoans/XSerializer
+  repository: https://github.com/QuickenLoans/XSerializer

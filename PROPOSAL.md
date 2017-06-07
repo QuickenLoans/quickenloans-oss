@@ -7,7 +7,7 @@ representative of the project. To submit a project for review:
   1. In your own Fork of this repository create a new file
     + Named similar to your project
     + Use the [Proposal Template] as a starting point
-    + Fill in the required fields: name, repoURL, and type
+    + Fill in the required fields
     + Additional fields may be suggested as part of the review process
   2. Submit a Pull Request from a branch in your Fork to the "master" branch in
     this repository.
@@ -30,7 +30,7 @@ representative of the project. To submit a project for review:
 [Approvals]: #approvals
 
 These are the approvals that are necessary; in most cases the SME will be able
-to evaluate all areas but will incorporate .
+to evaluate all areas.
 
 The primary areas of approval are
 
@@ -85,7 +85,7 @@ For code this could include, but is not limited to:
 ### Used
 [Used]: #used
 
-The project is in use and not an abandoned.
+The project is in use and not abandoned.
 
 The full description of "in use" is somewhat dependent on the type of project;
 if code, the project should be in "production" use.

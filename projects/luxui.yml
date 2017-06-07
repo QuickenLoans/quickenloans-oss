@@ -9,6 +9,8 @@ keywords:
   - javascript
   - reactjs
 language: JavaScript
+maintainers:
+  kalisjoshua: joshkalis@quickenloans.com
 type: library
 url:
   logo:

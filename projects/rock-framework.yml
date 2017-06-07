@@ -1,0 +1,17 @@
+title: RockFramework
+description: >
+  A cross-cutting set of libraries and services providing a consistent,
+  well-documented, and easy-to-use API that helps developers solve the problems
+  that nearly all applications have
+keywords:
+  - .NET
+  - csharp
+  - C#
+language: C#
+maintainers:
+  bfriesen: brianfriesen@quickenloans.com
+type: library
+url:
+  logo:
+  project: http://www.rockframework.org/
+  repository: https://github.com/RockFramework
