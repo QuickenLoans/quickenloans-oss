@@ -1,6 +1,7 @@
 .hero-title {
   color: #000;
   font-family: monospace;
+  font-size: 32px;
   text-align: center;
 }
 
@@ -15,12 +16,13 @@
 
 @media (min-width: 550px) {
   .hero-title {
+    font-size: 38px;
     margin: 4ex;
   }
 }
 
 @media (min-width: 900px) {
   .hero-title {
-    font-size: 7ex;
+    font-size: 48px;
   }
 }
