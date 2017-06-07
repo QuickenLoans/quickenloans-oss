@@ -1,0 +1,22 @@
+title: 'URI Template'
+
+description: >
+  Full implementation of RFC 6570 - URI Template. A URI Template is a compact
+  sequence of characters for describing a range of Uniform Resource Identifiers
+  through variable expansion.
+
+keywords:
+  - 'rfc6570'
+  - 'uri-template'
+
+language: php
+
+maintainers:
+  pleonasm: 'MattNagi@rocketfiber.com'
+
+type: library
+
+url:
+  logo: ''
+  project: ''
+  repository: 'https://github.com/QuickenLoans/uri-template'

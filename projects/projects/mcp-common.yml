@@ -1,0 +1,24 @@
+title: 'MCP Common'
+
+description: >
+  This package provides common code, utilities, and data types used by most
+  other MCP or Quicken Loans PHP packages.
+
+keywords:
+  - 'mcp'
+  - 'utilities'
+  - 'time'
+  - 'guid'
+
+language: php
+
+maintainers:
+  skluck: 'stevekluck@quickenloans.com'
+  mattcolf: 'mattcolf@quickenloans.com'
+
+type: library
+
+url:
+  logo: ''
+  project: ''
+  repository: 'https://github.com/quickenloans-mcp/mcp-common'
