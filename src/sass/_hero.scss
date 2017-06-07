@@ -1,14 +1,16 @@
 .hero-title {
+  color: #000;
+  font-family: monospace;
   text-align: center;
 }
 
 .hero-title em {
   color: $QL_red;
+  font-weight: 900;
 }
 
 .hero-title span {
   color: $QL_topaz;
-  font-weight: bold;
 }
 
 @media (min-width: 550px) {
