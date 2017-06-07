@@ -10,7 +10,7 @@
     "index": "node bin/projects.js -card ./src/card.tmpl -template ./src/index.html ./build/index.html",
     "pages:publish": "git push upstream `git subtree split --prefix build master`:gh-pages --force",
     "prepages:publish": "npm run build && git add build -f && git commit -am publishing",
-    "postpages:publish": "git reset --hard master^",
+    "postpages:publish": "git reset --hard master^ && npm run build",
     "sass": "node-sass ./src/sass/styles.scss > ./build/style.css"
   },
   "author": "Joshua T Kalis <kalisjoshua@gmail.com> (http://kalisjoshua.me)",
