@@ -25,11 +25,18 @@ function card(project) {
     throw new Error('Projects must have at least, a: title, description, and link.')
   }
 
+  const keywords = project.keywords
+
+  if (keywords.indexOf(project.language) === -1) {
+    keywords.push(project.language)
+  }
+
   return args.card
     .replace(/#description/g, project.description)
     .replace(/#href/g, link)
-    .replace(/#keywords/g, project.keywords || '')
-    .replace(/#language/g, project.language || '_')
+    .replace(/#keywords/g, keywords)
+    .replace(/#language-color/g, project.language.replace('#', 'Sharp') || '_')
+    .replace(/#language/g, project.language || '')
     .replace(/#logo/g, project.logo || 'http://via.placeholder.com/80x80')
     .replace(/#title/g, project.title)
 }

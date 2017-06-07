@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   margin: 2ex 0;
+  padding: 0 2ex;
   padding-bottom: 6ex;
   position: relative;
   transition: 200ms;
@@ -16,7 +17,7 @@
     margin: 5px;
   }
 
-  a {
+  .project--card__link a {
     color: #888;
   }
 }
@@ -33,16 +34,10 @@
     margin: 10px;
     transition: all 100ms, border-color 200ms 200ms;
   }
-
-  .project--card__title {
-    display: inline-block;
-    padding: 4ex 2ex;
-  }
 }
 
 .project--card__desc,
 .project--card__link {
-  padding: 0 2ex;
 }
 
 .project--card__keywords {
@@ -67,7 +62,11 @@
 }
 
 .project--card__title {
-  display: none;
+  margin: 4ex 0 0;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 @media (min-width: 550px) {
