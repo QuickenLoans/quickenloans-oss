@@ -1,3 +1,15 @@
+.no-projects { display: none; }
+.no-cards-shown .no-projects {
+  background: lighten($QL_red, 57%);
+  border: 1px solid $QL_red;
+  display: block;
+  margin: 6ex 0;
+  padding: 3ex;
+  text-align: center;
+  text-indent: initial;
+  width: 100%;
+}
+
 .project--card {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   display: flex;
@@ -8,6 +20,7 @@
   position: relative;
   transition: 200ms;
 }
+.project--card.filtered-out { display: none; }
 
 .project--card:hover {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);

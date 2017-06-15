@@ -3,11 +3,12 @@
   "version": "0.9.0",
   "description": "Landing page for organizing Quicken Loans' open source projects.",
   "scripts": {
-    "build": "npm run favicon && npm run index && npm run sass",
+    "build": "npm run favicon && npm run index && npm run js && npm run sass",
     "prebuild": "npm run clean && mkdir build",
     "clean": "rm -rf build",
     "favicon": "cp ./src/favicon.ico ./build",
     "index": "node bin/projects.js -card ./src/card.tmpl -template ./src/index.html ./build/index.html",
+    "js": "cp ./src/js/filter.js ./build",
     "pages:publish": "git push upstream `git subtree split --prefix build master`:gh-pages --force",
     "prepages:publish": "npm run build && git add build -f && git commit -am publishing",
     "postpages:publish": "git reset --hard master^ && npm run build",
