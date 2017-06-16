@@ -37,7 +37,9 @@
 	function getAllInnerText(el) {
 		const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
 		let n, ary = [];
-		while(n = walker.nextNode()) ary.push(n.textContent);
+		while(n = walker.nextNode()) {
+			ary.push(n.textContent);
+		}
 		return ary.join(' ').replace(/\s\s+/g, ' ');
 	}
 
@@ -49,14 +51,18 @@
 	function clickedFilterTerm(e) {
 		const filterText = e.target.innerText;
 		const filterIndex = filters.findIndex(text=>text===filterText);
-		(filterIndex > -1) ? filters.splice(filterIndex, 1) : filters.push(filterText);
+		(filterIndex > -1) 
+			? filters.splice(filterIndex, 1) 
+			: filters.push(filterText);
 		assignFilterClasses();
 	}
 
 	function assignFilterClasses() {
 		const shownCards = projectCardsWithInnerText
 											.filter(assignFilteredOutClass);
-		(shownCards.length === 0) ? projectsContainer.classList.add('no-cards-shown') : projectsContainer.classList.remove('no-cards-shown');			
+		(shownCards.length === 0) 
+			? projectsContainer.classList.add('no-cards-shown') 
+			: projectsContainer.classList.remove('no-cards-shown');			
 	}
 
 	function assignFilteredOutClass({cardEl, cardInnerText}){
@@ -66,7 +72,9 @@
 								+ searchTerm
 								, 'gi');
 		const show = searchRegex.test(cardInnerText) || (filters.length === 0 && searchTerm === '');
-		show ? cardEl.classList.remove('filtered-out') : cardEl.classList.add('filtered-out');
+		show 
+			? cardEl.classList.remove('filtered-out') 
+			: cardEl.classList.add('filtered-out');
 		return show;
 	}
 })();
