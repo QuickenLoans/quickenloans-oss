@@ -8,7 +8,7 @@
     "clean": "rm -rf build",
     "favicon": "cp ./src/favicon.ico ./build",
     "index": "node bin/projects.js -card ./src/card.tmpl -template ./src/index.html ./build/index.html",
-    "js": "cp ./src/js/filter.js ./build",
+    "js": "babel ./src/js/filter.js > ./build/filter.js",
     "pages:publish": "git push upstream `git subtree split --prefix build master`:gh-pages --force",
     "prepages:publish": "npm run build && git add build -f && git commit -am publishing",
     "postpages:publish": "git reset --hard master^ && npm run build",
@@ -17,6 +17,8 @@
   "author": "Joshua T Kalis <kalisjoshua@gmail.com> (http://kalisjoshua.me)",
   "license": "MIT",
   "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.5.2",
     "js-yaml": "^3.8.4",
     "node-sass": "^4.5.3"
   }
