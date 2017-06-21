@@ -1,3 +1,5 @@
+.filters { display: none; }
+
 [for="filter"] {
   font-size: 100%;
   font-weight: 100;
@@ -11,14 +13,16 @@ input[name="filter"] {
   border-radius: 3px;
   font-size: 110%;
   padding: 3px 1ex;
-  width: 47%;
+  width: 100%;
 }
 
-.filters {
+.prefilled-search {
   display: none;
 }
 
 .quick-filters {
+  display: none;
+  float: right;
   list-style-type: none;
 }
 
@@ -44,11 +48,16 @@ input[name="filter"] {
 }
 
 @media (min-width: 550px) {
-  .filters {
+  .filters { display: block; }
+
+  .prefilled-search {
     display: block;
   }
+}
 
+@media (min-width: 700px) {
+  input[name="filter"] { width: 47%; }
   .quick-filters {
-    float: right;
+    display: block;
   }
 }

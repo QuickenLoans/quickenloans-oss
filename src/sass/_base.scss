@@ -6,6 +6,16 @@ $QL_red:    #b4131b;
 $QL_purple: #561387;
 $QL_gray:   #444;
 
+$unit: 4ex;
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

@@ -1,5 +1,5 @@
 <!doctype html />
-<html>
+<html class="no-flexbox-support">
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -34,7 +34,7 @@
     <nav class="filters width-container">
       <h2 for="filter">Filter Projects</h2>
 
-      <input id="filter" list="prefilled-search" name="filter" type="search" />
+      <input class="search-box" id="filter" list="prefilled-search" name="filter" type="search" />
 
       <datalist id="prefilled-search">
         <option value="CSS" />
@@ -66,5 +66,15 @@
   </section>
 
   <script src="filter.js"></script>
+  <script>
+    (function () {
+      'use strict'
+
+      if (document.createElement('div').style.flex !== void 0) {
+        document.documentElement.className = document.documentElement.className
+          .replace('no-flexbox-support', 'flexbox-support')
+      }
+    }())
+  </script>
 </body>
 </html>

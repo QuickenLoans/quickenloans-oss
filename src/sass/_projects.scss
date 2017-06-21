@@ -12,8 +12,6 @@
 
 .project--card {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
   margin: 2ex 0;
   padding: 0 2ex;
   padding-bottom: 6ex;
@@ -35,10 +33,6 @@
   }
 }
 
-.project--card > * {
-  flex: 0 0 0;
-}
-
 .project--card__banner {
   img {
     border: 3px solid #FFF;
@@ -49,16 +43,11 @@
   }
 }
 
-.project--card__desc,
-.project--card__link {
-}
-
 .project--card__keywords {
   display: none;
 }
 
 .project--card__link {
-  align-self: flex-end;
   bottom: 0;
   padding: 2ex;
   position: absolute;
@@ -82,26 +71,74 @@
   }
 }
 
-@media (min-width: 550px) {
-  .projects-container {
+.flexbox-support {
+  .project--card {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
   }
 
-  .project--card {
-    flex: 0 0 calc(100% / 2 - 2ex);
+  .project--card > * {
+    flex: 0 0 0;
+  }
+
+  .project--card__link {
+    align-self: flex-end;
   }
 }
 
-@media (min-width: 900px) {
-  .project--card {
-    flex: 0 0 calc(100% / 3 - 2ex);
+.no-flexbox-support {
+  .projects-container {
+    @include clearfix;
   }
+
+  .project--card {
+    float: left;
+  }
+}
+
+@media (min-width: 550px) {
+  .flexbox-support {
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  .no-flexbox-support {
+    .project--card + .project--card {
+      margin-left: $unit / 2;
+    }
+  }
+}
+
+@mixin cardsBreakpoint($cardCount) {
+  .flexbox-support {
+    .project--card {
+      flex: 0 0 unquote("calc(100% / #{$cardCount} - #{$unit} / 2)");
+    }
+  }
+
+  .no-flexbox-support {
+    .project--card {
+      width: unquote("calc(100% / #{$cardCount} - #{$unit} / 2)");
+    }
+
+    .project--card:nth-of-type(#{$cardCount}n+1) {
+      clear: left;
+      margin-left: 0;
+    }
+  }
+}
+
+@media (min-width: 550px) and (max-width: 900px) {
+  @include cardsBreakpoint(2);
+}
+
+@media (min-width: 900px) and (max-width: 1200px) {
+  @include cardsBreakpoint(3);
 }
 
 @media (min-width: 1200px) {
-  .project--card {
-    flex: 0 0 calc(100% / 4 - 2ex);
-  }
+  @include cardsBreakpoint(4);
 }
