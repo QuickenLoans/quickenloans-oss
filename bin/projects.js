@@ -44,7 +44,7 @@ function card(project) {
     .replace(/#title/g, project.title)
 }
 
-function projects(subtree = './projects/projects/') {
+function projects(subtree = './projects/') {
 
   return fs.readdirSync(path.join(CWD, subtree))
     .map(entry => yaml(fs.readFileSync(path.join(CWD, subtree, entry), 'utf-8')))
