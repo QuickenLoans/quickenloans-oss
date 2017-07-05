@@ -9,6 +9,7 @@
     "favicon": "cp ./src/favicon.ico ./build",
     "index": "node bin/projects.js -card ./src/card.tmpl -template ./src/index.html ./build/index.html",
     "js": "babel ./src/js/filter.js > ./build/filter.js",
+    "lint": "eslint src/",
     "pages:publish": "git push upstream `git subtree split --prefix build master`:gh-pages --force",
     "prepages:publish": "npm run build && git add build -f && git commit -am publishing",
     "postpages:publish": "git reset --hard master^ && npm run build",
@@ -21,5 +22,14 @@
     "babel-preset-env": "^1.5.2",
     "js-yaml": "^3.8.4",
     "node-sass": "^4.5.3"
-  }
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-plugin-import": "^2.6.1",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0"
+  },
+  "false": {}
 }
