@@ -1,6 +1,6 @@
 {
   "name": "ql-oss-landing-page-mvp",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "Landing page for organizing Quicken Loans' open source projects.",
   "scripts": {
     "build": "npm run favicon && npm run index && npm run js && npm run sass",
