@@ -18,7 +18,7 @@
   position: relative;
   transition: 200ms;
 }
-.project--card.filtered-out { display: none; }
+.project--card.filtered-out { display: none !important; }
 
 .project--card:hover {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
