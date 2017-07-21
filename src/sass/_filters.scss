@@ -35,16 +35,21 @@ input[name="filter"] {
   position: relative;
 }
 
-.quick-filters > li:hover:after {
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid #AAA;
-  content: '';
-  height: 0;
-  left: calc(50% - 3px);
-  position: absolute;
-  top: 0;
-  width: 0;
+.quick-filters > li {
+  &:hover,
+  &.selected {
+    &:after {
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid #AAA;
+      content: '';
+      height: 0;
+      left: calc(50% - 3px);
+      position: absolute;
+      top: 0;
+      width: 0;
+    }
+  }
 }
 
 @media (min-width: 550px) {
