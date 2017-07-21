@@ -72,78 +72,77 @@
     updateQueryParams(filters, searchTerm);
   }
 
-  function clickedFilterTerm(e) {
-    if (e.target.tagName !== 'LI') return;
+  function clickedFilterTerm({ target }) {
+    if (target.tagName === 'LI') {
+      const filterText = target.innerText;
+      const filterIndex = filters.findIndex(text => text === filterText);
 
-    const filterText = e.target.innerText;
-    const filterIndex = filters.findIndex(text => text === filterText);
+      if (filterIndex > -1) {
+        filters.splice(filterIndex, 1);
+      } else {
+        filters.push(filterText);
+      }
 
-    if (filterIndex > -1) {
-      filters.splice(filterIndex, 1);
-    } else {
-      filters.push(filterText);
+      assignFilterClasses();
+      updateQueryParams();
+      assignSelectedClassToFilterItems();
     }
-
-    assignFilterClasses();
-    updateQueryParams(filters, searchTerm);
-    assignSelectedClassToFilterItems();
   }
 
   function assignSelectedClassToFilterItems() {
-    const filterItems = quickFilters.querySelectorAll('li');
-    filterItems.forEach((filterItem) => {
-      const findFn = filterText =>
-        filterItem.innerText === filterText;
+    quickFilters
+      .querySelectorAll('li')
+      .forEach((filterItem) => {
+        const findFn = filterText =>
+          filterItem.innerText === filterText;
 
-      const method = filters.find(findFn)
-        ? 'add'
-        : 'remove';
+        const method = filters.find(findFn) ? 'add' : 'remove';
 
-      filterItem.classList[method]('selected');
-    });
+        filterItem.classList[method]('selected');
+      });
   }
 
   function assignFilterClasses() {
     const shownCards = projectCardsWithInnerText
       .filter(assignFilteredOutClass);
 
-    const method = shownCards.length === 0
-      ? 'add'
-      : 'remove';
+    const method = shownCards.length === 0 ? 'add' : 'remove';
 
     projectsContainer.classList[method]('no-cards-shown');
   }
 
   function assignFilteredOutClass({ cardEl, cardInnerText }) {
-    const searchRegex = new RegExp(
-      filters.map(text => text).join('|')
-      + ((filters.length > 0 && searchTerm !== '' && '|') || '')
-      + searchTerm
-      , 'gi');
+    const searchRegex = new RegExp([
+      filters.join('|'),
+      searchTerm,
+    ].filter(str => !!str).join('|'), 'gi');
 
-    const show = searchRegex.test(cardInnerText) ||
-      (filters.length === 0 && searchTerm === '');
+    const show = (filters.length === 0 && searchTerm === '') ||
+      searchRegex.test(cardInnerText);
 
-    cardEl.classList[show ? 'remove' : 'add']('filtered-out');
+    const method = show ? 'remove' : 'add';
+
+    cardEl.classList[method]('filtered-out');
 
     return show;
   }
 
-  function updateQueryParams(strings, terms) {
-    const filtersParam = strings.length ? `filters=${strings.join(',')}` : '';
-    const searchTermParam = terms ? `searchTerm=${terms}` : '';
+  function updateQueryParams() {
+    const newState = [
+      // "quick-filters" selected items
+      filters.length ? `filters=${filters.join(',')}` : '',
+      // "prefilled-search" text-input
+      searchTerm ? `searchTerm=${searchTerm}` : '',
+    ].filter(str => !!str).join('&');
 
-    history
-      .replaceState({}, '', `?${[filtersParam, searchTermParam].join('&')}`);
+    history.replaceState({}, '', `?${newState}`);
   }
 
   function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-
     name = name.replace(/[[\]]/g, '\\$&');
 
     const regex = new RegExp(`[?&]${name}(=([^&#]*)|&|#|$)`, 'i');
-    const results = regex.exec(url);
+    const results = regex.exec(url || window.location.href);
 
     if (!results) {
       return null;
