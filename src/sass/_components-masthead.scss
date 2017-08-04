@@ -1,0 +1,28 @@
+// ==================================================================
+// Masthead Component
+// ==================================================================
+
+.c-Masthead {
+  text-align: center;
+  padding-top: 3em;
+
+  @media all and (min-width: 54.5em) {
+    padding-top: 5em;
+  }
+}
+
+.c-Masthead__logo {
+  max-width: 16em;
+  margin: 0 auto 2em;
+
+  @media all and (min-width: 54.5em) {
+    margin-bottom: 3em;
+  }
+}
+
+.c-Masthead__secondary {
+  font-size: 90%;
+  position: absolute;
+  top: 0px;
+  right: 0;
+}
