@@ -2,28 +2,21 @@
   // 'use strict';
 
   const projectCardsWithInnerText = [].slice
-    .call(document.querySelectorAll('.project--card'), 0)
+    .call(document.querySelectorAll('.c-ProjectCard'), 0)
     .map(cardEl => ({
       cardEl,
       cardInnerText: getAllInnerText(cardEl),
     }));
 
   const filterInput = document.querySelector('#filter');
-  const quickFilters = document.querySelector('.quick-filters');
-  const projectsContainer = document.querySelector('.projects-container');
-
-  const filters = getParameterByName('filters')
-    ? getParameterByName('filters').split(',')
-    : [];
+  const projectsContainer = document.querySelector('.o-ProjectGrid');
 
   let searchTerm = getParameterByName('searchTerm') || '';
   filterInput.value = searchTerm;
 
   assignFilterClasses();
-  assignSelectedClassToFilterItems();
 
   filterInput.addEventListener('input', debounce(enteredSearchTerm, 300));
-  quickFilters.addEventListener('click', clickedFilterTerm);
 
   function debounce(func, wait, immediate) {
     let timeout;
@@ -69,37 +62,7 @@
   function enteredSearchTerm(e) {
     searchTerm = e.target.value;
     assignFilterClasses();
-    updateQueryParams(filters, searchTerm);
-  }
-
-  function clickedFilterTerm({ target }) {
-    if (target.tagName === 'LI') {
-      const filterText = target.innerText;
-      const filterIndex = filters.findIndex(text => text === filterText);
-
-      if (filterIndex > -1) {
-        filters.splice(filterIndex, 1);
-      } else {
-        filters.push(filterText);
-      }
-
-      assignFilterClasses();
-      updateQueryParams();
-      assignSelectedClassToFilterItems();
-    }
-  }
-
-  function assignSelectedClassToFilterItems() {
-    quickFilters
-      .querySelectorAll('li')
-      .forEach((filterItem) => {
-        const findFn = filterText =>
-          filterItem.innerText === filterText;
-
-        const method = filters.find(findFn) ? 'add' : 'remove';
-
-        filterItem.classList[method]('selected');
-      });
+    updateQueryParams(searchTerm);
   }
 
   function assignFilterClasses() {
@@ -108,30 +71,27 @@
 
     const method = shownCards.length === 0 ? 'add' : 'remove';
 
-    projectsContainer.classList[method]('no-cards-shown');
+    projectsContainer.classList[method]('js-NoCards');
   }
 
   function assignFilteredOutClass({ cardEl, cardInnerText }) {
     const searchRegex = new RegExp([
-      filters.join('|'),
       searchTerm,
     ].filter(str => !!str).join('|'), 'gi');
 
-    const show = (filters.length === 0 && searchTerm === '') ||
+    const show = (searchTerm === '') ||
       searchRegex.test(cardInnerText);
 
     const method = show ? 'remove' : 'add';
 
-    cardEl.classList[method]('filtered-out');
+    cardEl.classList[method]('js-Filtered');
 
     return show;
   }
 
   function updateQueryParams() {
     const newState = [
-      // "quick-filters" selected items
-      filters.length ? `filters=${filters.join(',')}` : '',
-      // "prefilled-search" text-input
+      // "filter-list" text-input
       searchTerm ? `searchTerm=${searchTerm}` : '',
     ].filter(str => !!str).join('&');
 

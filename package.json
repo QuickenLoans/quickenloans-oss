@@ -5,6 +5,7 @@
   "scripts": {
     "build": "npm run favicon && npm run index && npm run js && npm run sass",
     "prebuild": "npm run clean && mkdir build && npm run lint",
+    "build:dev": "npm run index && npm run sass && npm run js",
     "clean": "rm -rf build",
     "favicon": "cp ./src/favicon.ico ./build",
     "index": "node bin/projects.js -card ./src/card.tmpl -template ./src/index.html ./build/index.html",
@@ -13,7 +14,10 @@
     "pages:publish": "git push upstream `git subtree split --prefix build master`:gh-pages --force",
     "prepages:publish": "npm run build && git add build -f && git commit -am publishing",
     "postpages:publish": "git reset --hard master^ && npm run build",
-    "sass": "node-sass ./src/sass/styles.scss > ./build/style.css"
+    "sass": "node-sass ./src/sass/styles.scss > ./build/style.css",
+    "serve": "browser-sync start -s 'build' -f 'src' --reload-delay 6000",
+    "watch": "watch 'npm run build' src",
+    "dev": "watch 'npm run build:dev' src & npm run serve"
   },
   "author": "Joshua T Kalis <kalisjoshua@gmail.com> (http://kalisjoshua.me)",
   "license": "MIT",
@@ -24,12 +28,16 @@
     "node-sass": "^4.5.3"
   },
   "devDependencies": {
+    "@scalescss/scalescss": "^3.1.1",
     "babel-eslint": "^7.2.3",
+    "browser-sync": "^2.18.13",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.2",
     "eslint-plugin-import": "^2.6.1",
     "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.1.0"
+    "eslint-plugin-react": "^7.1.0",
+    "http-server": "^0.10.0",
+    "watch": "^1.0.2"
   },
   "false": {}
 }

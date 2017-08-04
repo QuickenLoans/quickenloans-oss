@@ -18,9 +18,15 @@ const args = process.argv
   }, {})
 
 function card(project) {
-  const link = project.url && (project.url.project || project.url.repository)
+  const projectURL = project.url && project.url.project
+  const repoURL = project.url && project.url.repository
+  let displayNoneUtility = 'u-DisplayNone'
 
-  if (!project.description || !link || !project.title) {
+  if (projectURL) {
+    displayNoneUtility = ''
+  }
+
+  if (!project.description || !repoURL || !project.title) {
     console.error(project)
     throw new Error('Projects must have at least, a: title, description, and link.')
   }
@@ -38,7 +44,9 @@ function card(project) {
 
   return args.card
     .replace(/#description/g, project.description)
-    .replace(/#href/g, link)
+    .replace(/#projectURL/g, projectURL)
+    .replace(/#repoURL/g, repoURL)
+    .replace(/#displayNoneUtility/g, displayNoneUtility)
     .replace(/#keywords/g, keywords)
     .replace(/#language-color/g, languageColor || '_')
     .replace(/#language/g, project.language || '')

@@ -1,0 +1,22 @@
+// ==================================================================
+// Global base styles
+// ==================================================================
+
+html {
+  background-color: $white;
+}
+
+body {
+  padding: .75em .75em 0;
+  background: linear-gradient($white 0em, $white 22em, $grey-light 22em, $grey-light);
+
+  @media all and (min-width: 54.5em) {
+    background: linear-gradient($white 0em, $white 25.25em, $grey-light 25.25em, $grey-light);
+  }
+}
+
+[role="contentinfo"] {
+  background-color: $white;
+  margin: 0 -.75em;
+  padding: 1em;
+}
