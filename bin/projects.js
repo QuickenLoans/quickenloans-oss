@@ -1,34 +1,21 @@
 const fs = require('fs')
-const https = require('https')
 const path = require('path')
 const yaml = require('js-yaml').safeLoad
 
+const cliArgs = require('./cliArgs')
+
 const CWD = process.cwd()
 
-const file = str =>
-  fs.readFileSync(path.join(CWD, str), 'utf-8')
-
-const args = process.argv
-  .reduce((acc, item, indx, ary) => {
-    if (/^-/.test(item)) {
-      acc[item.slice(1)] = file(ary[indx + 1])
-    }
-
-    return acc
-  }, {})
+const { card: CARD, template: TEMPLATE } = cliArgs(process.argv)
 
 function card(project) {
   const projectURL = project.url && project.url.project
   const repoURL = project.url && project.url.repository
-  let displayNoneUtility = 'u-DisplayNone'
-
-  if (projectURL) {
-    displayNoneUtility = ''
-  }
 
   if (!project.description || !repoURL || !project.title) {
+    // eslint-disable-next-line no-console
     console.error(project)
-    throw new Error('Projects must have at least, a: title, description, and link.')
+    throw new Error('Projects must have: title, description, and link.')
   }
 
   const keywords = project.keywords
@@ -37,16 +24,17 @@ function card(project) {
     keywords.push(project.language)
   }
 
-  const type = project.type.slice(0, 1).toUpperCase() + project.type.slice(1).toLowerCase()
   const languageColor = project.language
     .replace('#', 'Sharp')
     .toLowerCase()
+  const type = project.type.slice(0, 1).toUpperCase() +
+    project.type.slice(1).toLowerCase()
 
-  return args.card
+  return CARD
     .replace(/#description/g, project.description)
     .replace(/#projectURL/g, projectURL)
     .replace(/#repoURL/g, repoURL)
-    .replace(/#displayNoneUtility/g, displayNoneUtility)
+    .replace(/#displayNoneUtility/g, projectURL ? '' : 'u-DisplayNone')
     .replace(/#keywords/g, keywords)
     .replace(/#language-color/g, languageColor || '_')
     .replace(/#language/g, project.language || '')
@@ -58,10 +46,11 @@ function card(project) {
 function projects(subtree = './projects/') {
 
   return fs.readdirSync(path.join(CWD, subtree))
-    .map(entry => yaml(fs.readFileSync(path.join(CWD, subtree, entry), 'utf-8')))
+    .map(entry =>
+      yaml(fs.readFileSync(path.join(CWD, subtree, entry), 'utf-8')))
 }
 
-const page = args.template
+const page = TEMPLATE
   .replace(/#pagecontent/g, projects().map(card).join('\n'))
 
 const dest = path.join(CWD, process.argv.pop())
