@@ -3,26 +3,31 @@
 // ==================================================================
 
 .c-Masthead {
-  text-align: center;
-  padding-top: 3em;
 
-  @media all and (min-width: 54.5em) {
-    padding-top: 5em;
+  @media all and (min-width: 32em) {
+    padding-top: 7em;
   }
 }
 
 .c-Masthead__logo {
-  max-width: 16em;
-  margin: 0 auto 2em;
+  text-align: center;
+  margin-bottom: .5em;
 
-  @media all and (min-width: 54.5em) {
-    margin-bottom: 3em;
+  @media all and (min-width: 32em) {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 
 .c-Masthead__secondary {
   font-size: 90%;
-  position: absolute;
-  top: 0px;
-  right: 0;
+  text-align: center;
+  margin-bottom: 2em;
+
+  @media all and (min-width: 32em) {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
