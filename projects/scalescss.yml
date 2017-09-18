@@ -1,0 +1,23 @@
+title: Scales CSS
+description: >
+  Scales is a modular CSS framework for quickly building responsive web projects.
+keywords:
+  - CSS
+  - Sass
+  - scss
+  - OOCSS
+  - Responsive Web Design
+  - Responsive Design
+  - RWD
+  - HTML
+  - ITCSS
+  - BEM
+  - Design Patterns
+language: CSS
+maintainers:
+  yodasw16: yodasw16@gmail.com
+type: library
+url:
+  logo: http://devtroit.com/stuff/scales.png
+  project: http://scalescss.com
+  repository: https://github.com/ScalesCSS/scalescss
