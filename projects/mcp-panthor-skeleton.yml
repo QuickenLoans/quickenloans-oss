@@ -1,0 +1,26 @@
+title: 'MCP Panthor Skeleton App'
+
+description: >
+  This is a sample skeleton app used to showcase some simple example controllers
+  and pages, and get users up and running more quickly.
+
+  MCP Panthor is a thin PHP microframework built on Slim and Symfony. It takes
+  the simplicity of Slim and provides a bit more structure for applications with
+  a few Symfony components.
+
+keywords:
+  - 'mcp'
+  - 'skeleton'
+  - 'example-app'
+
+language: php
+
+maintainers:
+  skluck: 'stevekluck@quickenloans.com'
+
+type: application
+
+url:
+  logo: ''
+  project: ''
+  repository: 'https://github.com/quickenloans-mcp/panthor-skeleton'

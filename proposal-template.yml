@@ -1,0 +1,17 @@
+# All fields required unless indicated as optional
+
+title: Project Name
+description: >
+  Describe the project briefly; could the first sentence(s) from the README.md.
+keywords:
+  # - (optional) interesting languages or technologies
+language: single-value
+maintainers:
+  # Primary maintainer's name first
+  GitHubUsername: teammember@quickenloans.com
+  # (optional) additional maintainers listed below
+type: # one of [application, tool, library, documentation]
+url:
+  logo: # (optional) http://foo.bar/logo.png
+  project: # (optional) http://foo.bar
+  repository: http://foo.bar.git
