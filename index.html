@@ -51,10 +51,31 @@
 
     <main role="main">
       <div class="o-ProjectGrid">
-        <article class="c-ProjectCard" data-lang="javascript">
+        <article class="c-ProjectCard" data-lang="elixir">
   <header class="c-ProjectCard__header">
     <h3 class="b-Gamma">
-      <a class="c-ProjectCard__heading" href="#project">jQuery Image Uploader</a>
+      <a class="c-ProjectCard__heading" href="https://github.com/QuickenLoans/cache_worker">CacheWorker</a>
+    </h3>
+    <div class="c-ProjectCard__tags">
+      <span class="c-Tag">elixir</span>
+      <span class="c-Tag">Library</span>
+    </div>
+  </header>
+
+  <p class="c-ProjectCard__body">Defines a behavior to be implemented for managing data that should be held in the VM and periodically refreshed.
+</p>
+  <p class="u-DisplayNone">elixir,erlang</p>
+
+  <footer class="c-ProjectCard__footer">
+    <a class="c-ProjectCard__button c-Button u-DisplayNone" href="undefined">Project</a>
+    <a class="c-ProjectCard__button c-Button" href="https://github.com/QuickenLoans/cache_worker">Repo</a>
+  </footer>
+</article>
+
+<article class="c-ProjectCard" data-lang="javascript">
+  <header class="c-ProjectCard__header">
+    <h3 class="b-Gamma">
+      <a class="c-ProjectCard__heading" href="http://quickenloans.github.io/jquery-imageuploader-js/">jQuery Image Uploader</a>
     </h3>
     <div class="c-ProjectCard__tags">
       <span class="c-Tag">JavaScript</span>
@@ -75,7 +96,7 @@
 <article class="c-ProjectCard" data-lang="javascript">
   <header class="c-ProjectCard__header">
     <h3 class="b-Gamma">
-      <a class="c-ProjectCard__heading" href="#project">JavaScript Concord</a>
+      <a class="c-ProjectCard__heading" href="https://github.com/QuickenLoans/js-concord">JavaScript Concord</a>
     </h3>
     <div class="c-ProjectCard__tags">
       <span class="c-Tag">JavaScript</span>
@@ -96,7 +117,7 @@
 <article class="c-ProjectCard" data-lang="javascript">
   <header class="c-ProjectCard__header">
     <h3 class="b-Gamma">
-      <a class="c-ProjectCard__heading" href="#project">LucidBoard</a>
+      <a class="c-ProjectCard__heading" href="https://github.com/QuickenLoans/lucidboard">LucidBoard</a>
     </h3>
     <div class="c-ProjectCard__tags">
       <span class="c-Tag">JavaScript</span>
@@ -117,7 +138,7 @@
 <article class="c-ProjectCard" data-lang="javascript">
   <header class="c-ProjectCard__header">
     <h3 class="b-Gamma">
-      <a class="c-ProjectCard__heading" href="#project">LuxUI</a>
+      <a class="c-ProjectCard__heading" href="https://luxui.github.io/lux-core/docs/">LuxUI</a>
     </h3>
     <div class="c-ProjectCard__tags">
       <span class="c-Tag">JavaScript</span>
@@ -138,7 +159,7 @@
 <article class="c-ProjectCard" data-lang="php">
   <header class="c-ProjectCard__header">
     <h3 class="b-Gamma">
-      <a class="c-ProjectCard__heading" href="#project">MCP Cache</a>
+      <a class="c-ProjectCard__heading" href="https://github.com/quickenloans/mcp-common">MCP</a>
     </h3>
     <div class="c-ProjectCard__tags">
       <span class="c-Tag">php</span>
@@ -146,109 +167,20 @@
     </div>
   </header>
 
-  <p class="c-ProjectCard__body">Simple caching standard for Quicken Loans PHP projects.
-We prefer a simpler cache protocol than the one provided by PSR-6 Caching Interface. This package has many similarities with the draft PSR-16 Simple Cache, but is not yet compatible.
+  <p class="c-ProjectCard__body">MCP is a collection of PHP libraries and utilities for Quicken Loans PHP projects. It provides a PSR-3 compatible Logger, Caching standard, as well as smaller utilities for handling Time parsing and GUIDs.
 </p>
-  <p class="u-DisplayNone">mcp,cache,php</p>
+  <p class="u-DisplayNone">cache,logger,time,guid,php</p>
 
   <footer class="c-ProjectCard__footer">
     <a class="c-ProjectCard__button c-Button u-DisplayNone" href="">Project</a>
-    <a class="c-ProjectCard__button c-Button" href="https://github.com/quickenloans-mcp/mcp-cache">Repo</a>
-  </footer>
-</article>
-
-<article class="c-ProjectCard" data-lang="php">
-  <header class="c-ProjectCard__header">
-    <h3 class="b-Gamma">
-      <a class="c-ProjectCard__heading" href="#project">MCP Common</a>
-    </h3>
-    <div class="c-ProjectCard__tags">
-      <span class="c-Tag">php</span>
-      <span class="c-Tag">Library</span>
-    </div>
-  </header>
-
-  <p class="c-ProjectCard__body">This package provides common code, utilities, and data types used by most other MCP or Quicken Loans PHP packages.
-</p>
-  <p class="u-DisplayNone">mcp,utilities,time,guid,php</p>
-
-  <footer class="c-ProjectCard__footer">
-    <a class="c-ProjectCard__button c-Button u-DisplayNone" href="">Project</a>
-    <a class="c-ProjectCard__button c-Button" href="https://github.com/quickenloans-mcp/mcp-common">Repo</a>
-  </footer>
-</article>
-
-<article class="c-ProjectCard" data-lang="php">
-  <header class="c-ProjectCard__header">
-    <h3 class="b-Gamma">
-      <a class="c-ProjectCard__heading" href="#project">MCP Logger</a>
-    </h3>
-    <div class="c-ProjectCard__tags">
-      <span class="c-Tag">php</span>
-      <span class="c-Tag">Library</span>
-    </div>
-  </header>
-
-  <p class="c-ProjectCard__body">Structured logging for Quicken Loans PHP projects.
-We prefer structured log messages defined on top of PSR-3 Logger Interface to allow easier searching of log messages from our log provider.
-This library shares some features with the popular PHP logging library Monolog, but we aim to keep this library small and simple and avoid unnecessary dependencies for our projects.
-</p>
-  <p class="u-DisplayNone">mcp,logging,psr-3,php</p>
-
-  <footer class="c-ProjectCard__footer">
-    <a class="c-ProjectCard__button c-Button u-DisplayNone" href="">Project</a>
-    <a class="c-ProjectCard__button c-Button" href="https://github.com/quickenloans-mcp/mcp-logger">Repo</a>
-  </footer>
-</article>
-
-<article class="c-ProjectCard" data-lang="php">
-  <header class="c-ProjectCard__header">
-    <h3 class="b-Gamma">
-      <a class="c-ProjectCard__heading" href="#project">MCP Panthor Skeleton App</a>
-    </h3>
-    <div class="c-ProjectCard__tags">
-      <span class="c-Tag">php</span>
-      <span class="c-Tag">Application</span>
-    </div>
-  </header>
-
-  <p class="c-ProjectCard__body">This is a sample skeleton app used to showcase some simple example controllers and pages, and get users up and running more quickly.
-MCP Panthor is a thin PHP microframework built on Slim and Symfony. It takes the simplicity of Slim and provides a bit more structure for applications with a few Symfony components.
-</p>
-  <p class="u-DisplayNone">mcp,skeleton,example-app,php</p>
-
-  <footer class="c-ProjectCard__footer">
-    <a class="c-ProjectCard__button c-Button u-DisplayNone" href="">Project</a>
-    <a class="c-ProjectCard__button c-Button" href="https://github.com/quickenloans-mcp/panthor-skeleton">Repo</a>
-  </footer>
-</article>
-
-<article class="c-ProjectCard" data-lang="php">
-  <header class="c-ProjectCard__header">
-    <h3 class="b-Gamma">
-      <a class="c-ProjectCard__heading" href="#project">MCP Panthor</a>
-    </h3>
-    <div class="c-ProjectCard__tags">
-      <span class="c-Tag">php</span>
-      <span class="c-Tag">Library</span>
-    </div>
-  </header>
-
-  <p class="c-ProjectCard__body">A thin microframework built on Slim and Symfony
-Panthor uses the simplicity of Slim and provides a bit more structure for applications with additional Symfony components. Utilities and helpers are provided to simplify template caching and dependency injection using Symfony Dependency Injection and Slim. It can be used for html applications, APIs, or both.
-</p>
-  <p class="u-DisplayNone">mcp,microframework,error-handling,cookie-encryption,php</p>
-
-  <footer class="c-ProjectCard__footer">
-    <a class="c-ProjectCard__button c-Button u-DisplayNone" href="">Project</a>
-    <a class="c-ProjectCard__button c-Button" href="https://github.com/quickenloans-mcp/mcp-panthor">Repo</a>
+    <a class="c-ProjectCard__button c-Button" href="https://github.com/quickenloans/mcp-common">Repo</a>
   </footer>
 </article>
 
 <article class="c-ProjectCard" data-lang="fsharp">
   <header class="c-ProjectCard__header">
     <h3 class="b-Gamma">
-      <a class="c-ProjectCard__heading" href="#project">Message Router</a>
+      <a class="c-ProjectCard__heading" href="https://github.com/QuickenLoans/MessageRouter">Message Router</a>
     </h3>
     <div class="c-ProjectCard__tags">
       <span class="c-Tag">F#</span>
@@ -269,7 +201,29 @@ Panthor uses the simplicity of Slim and provides a bit more structure for applic
 <article class="c-ProjectCard" data-lang="php">
   <header class="c-ProjectCard__header">
     <h3 class="b-Gamma">
-      <a class="c-ProjectCard__heading" href="#project">URI Template</a>
+      <a class="c-ProjectCard__heading" href="https://github.com/quickenloans/mcp-panthor">Panthor</a>
+    </h3>
+    <div class="c-ProjectCard__tags">
+      <span class="c-Tag">php</span>
+      <span class="c-Tag">Library</span>
+    </div>
+  </header>
+
+  <p class="c-ProjectCard__body">A thin microframework built on Slim and Symfony.
+Panthor uses the simplicity of Slim and provides more structure for applications with additional Symfony components. It can be used for html applications, APIs, or both.
+</p>
+  <p class="u-DisplayNone">mcp,microframework,php</p>
+
+  <footer class="c-ProjectCard__footer">
+    <a class="c-ProjectCard__button c-Button u-DisplayNone" href="">Project</a>
+    <a class="c-ProjectCard__button c-Button" href="https://github.com/quickenloans/mcp-panthor">Repo</a>
+  </footer>
+</article>
+
+<article class="c-ProjectCard" data-lang="php">
+  <header class="c-ProjectCard__header">
+    <h3 class="b-Gamma">
+      <a class="c-ProjectCard__heading" href="https://github.com/QuickenLoans/uri-template">URI Template</a>
     </h3>
     <div class="c-ProjectCard__tags">
       <span class="c-Tag">php</span>
@@ -290,7 +244,7 @@ Panthor uses the simplicity of Slim and provides a bit more structure for applic
 <article class="c-ProjectCard" data-lang="javascript">
   <header class="c-ProjectCard__header">
     <h3 class="b-Gamma">
-      <a class="c-ProjectCard__heading" href="#project">RAMLLint</a>
+      <a class="c-ProjectCard__heading" href="http://quickenloans.github.io/ramllint/">RAMLLint</a>
     </h3>
     <div class="c-ProjectCard__tags">
       <span class="c-Tag">JavaScript</span>
@@ -311,7 +265,7 @@ Panthor uses the simplicity of Slim and provides a bit more structure for applic
 <article class="c-ProjectCard" data-lang="csharp">
   <header class="c-ProjectCard__header">
     <h3 class="b-Gamma">
-      <a class="c-ProjectCard__heading" href="#project">RockFramework</a>
+      <a class="c-ProjectCard__heading" href="http://www.rockframework.org/">RockLib</a>
     </h3>
     <div class="c-ProjectCard__tags">
       <span class="c-Tag">C#</span>
@@ -325,14 +279,14 @@ Panthor uses the simplicity of Slim and provides a bit more structure for applic
 
   <footer class="c-ProjectCard__footer">
     <a class="c-ProjectCard__button c-Button " href="http://www.rockframework.org/">Project</a>
-    <a class="c-ProjectCard__button c-Button" href="https://github.com/RockFramework">Repo</a>
+    <a class="c-ProjectCard__button c-Button" href="https://github.com/rocklib">Repo</a>
   </footer>
 </article>
 
 <article class="c-ProjectCard" data-lang="css">
   <header class="c-ProjectCard__header">
     <h3 class="b-Gamma">
-      <a class="c-ProjectCard__heading" href="#project">Scales CSS</a>
+      <a class="c-ProjectCard__heading" href="http://scalescss.com">Scales CSS</a>
     </h3>
     <div class="c-ProjectCard__tags">
       <span class="c-Tag">CSS</span>
@@ -353,7 +307,7 @@ Panthor uses the simplicity of Slim and provides a bit more structure for applic
 <article class="c-ProjectCard" data-lang="javascript">
   <header class="c-ProjectCard__header">
     <h3 class="b-Gamma">
-      <a class="c-ProjectCard__heading" href="#project">UI Packages</a>
+      <a class="c-ProjectCard__heading" href="https://github.com/QuickenLoans/quickenloans-ui-packages">UI Packages</a>
     </h3>
     <div class="c-ProjectCard__tags">
       <span class="c-Tag">JavaScript</span>
@@ -374,7 +328,7 @@ Panthor uses the simplicity of Slim and provides a bit more structure for applic
 <article class="c-ProjectCard" data-lang="csharp">
   <header class="c-ProjectCard__header">
     <h3 class="b-Gamma">
-      <a class="c-ProjectCard__heading" href="#project">XSerializer</a>
+      <a class="c-ProjectCard__heading" href="https://github.com/QuickenLoans/XSerializer">XSerializer</a>
     </h3>
     <div class="c-ProjectCard__tags">
       <span class="c-Tag">C#</span>
